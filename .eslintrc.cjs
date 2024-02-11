@@ -14,7 +14,13 @@ module.exports = {
   ],
   ignorePatterns: ['node_modules', 'dist', '.eslintrc.cjs', '.github'],
   parser: '@typescript-eslint/parser',
-  plugins: ['import', 'jsx-a11y', 'prettier', '@typescript-eslint', 'react-refresh'],
+  plugins: [
+    'import',
+    'jsx-a11y',
+    'prettier',
+    '@typescript-eslint',
+    'react-refresh',
+  ],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
