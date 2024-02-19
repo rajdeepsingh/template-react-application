@@ -15,10 +15,10 @@ module.exports = {
   ignorePatterns: ['node_modules', 'dist', '.eslintrc.cjs', '.github'],
   parser: '@typescript-eslint/parser',
   plugins: [
-    'import',
     'jsx-a11y',
     'prettier',
     '@typescript-eslint',
+    'import',
     'react-refresh',
   ],
   rules: {
@@ -27,5 +27,22 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'prettier/prettier': 'error',
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: [
+          {
+            group: ['./*', '../*'],
+            message:
+              'Relative imports are not allowed. Use absolute imports instead.',
+          },
+        ],
+      },
+    ],
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
   },
 };
